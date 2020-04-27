@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { PhotoListModule } from './photos/photo-list/photo-list.module';
+import { PhotoFormModule } from './photos/photo-form/photo-form.module';
+import { ErrorsModule } from './errors/errors.module';
 
 @NgModule({
   declarations: [
@@ -10,6 +13,9 @@ import { AppRoutingModule } from './app.routing.module';
   ],
   imports: [
     BrowserModule,
+    PhotoListModule,
+    PhotoFormModule,
+    ErrorsModule,
     AppRoutingModule,
   ],
   providers: [],
