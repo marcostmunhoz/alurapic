@@ -1,0 +1,19 @@
+<div class="my-3">
+  <form class="d-flex justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+      <input
+        class="form-control rounded"
+        type="search"
+        placeholder="Search..."
+        autofocus
+        (keyup)="debounce.next($event.target.value)" />
+    </div>
+  </form>
+</div>
+
+<ap-photos [photos]="photos | filterBy: 'description':filter"></ap-photos>
+
+<ap-load-button
+  (click)="load()"
+  [hasMore]="hasMore">
+</ap-load-button>
