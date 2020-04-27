@@ -9,12 +9,14 @@ import { PhotosComponent } from './photos/photos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFieldComponent } from './search-field/search-field.component';
 import { CardModule } from 'src/app/shared/components/card/card.module';
+import { DarkenOnHoverModule } from 'src/app/shared/directives/darken-on-hover/darken-on-hover.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     CardModule,
+    DarkenOnHoverModule,
   ],
   declarations: [
     PhotoComponent,

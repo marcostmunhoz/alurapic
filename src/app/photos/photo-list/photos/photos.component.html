@@ -1,5 +1,9 @@
 <ol class="list-unstyled row justify-content-center" *ngIf="photos.length; else nophotos">
-  <li *ngFor="let photo of photos">
+  <li
+    class="m-2"
+    *ngFor="let photo of photos"
+    apDarkenOnHover
+    >
     <ap-card>
       <ap-photo
         [src]="photo.url"
