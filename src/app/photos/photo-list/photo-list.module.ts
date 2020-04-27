@@ -7,11 +7,14 @@ import { LoadButtonComponent } from './load-button/load-button.component';
 import { FilterBy } from './filter-by.pipe';
 import { PhotosComponent } from './photos/photos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchFieldComponent } from './search-field/search-field.component';
+import { CardModule } from 'src/app/shared/components/card/card.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
+    CardModule,
   ],
   declarations: [
     PhotoComponent,
@@ -19,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     PhotoListComponent,
     LoadButtonComponent,
     FilterBy,
+    SearchFieldComponent,
   ],
 })
 export class PhotoListModule { }

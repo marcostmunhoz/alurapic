@@ -1,14 +1,9 @@
-<div class="my-3">
-  <form class="d-flex justify-content-center">
-    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-      <input
-        class="form-control rounded"
-        type="search"
-        placeholder="Search..."
-        autofocus
-        (keyup)="debounce.next($event.target.value)" />
-    </div>
-  </form>
+<div class="row justify-content-center m-3">
+  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+    <ap-search-field
+      (search)="debounce.next($event)">
+    </ap-search-field>
+  </div>
 </div>
 
 <ap-photos [photos]="photos | filterBy: 'description':filter"></ap-photos>

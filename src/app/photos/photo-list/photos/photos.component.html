@@ -1,15 +1,23 @@
-<ol class="list-unstyled row no-gutters" *ngIf="photos.length; else nophotos">
-  <li class="text-center" *ngFor="let photo of photos">
-    <ap-photo
-      class="col-12 col-md-6 col-lg-4 col-xl-3"
-      [src]="photo.url"
-      [description]="photo.description">
-    </ap-photo>
+<ol class="list-unstyled row justify-content-center" *ngIf="photos.length; else nophotos">
+  <li *ngFor="let photo of photos">
+    <ap-card>
+      <ap-photo
+        [src]="photo.url"
+        [description]="photo.description">
+      </ap-photo>
+      <div class="m-2">
+        {{ photo.description }}
+      </div>
+      <div class="text-center">
+        <i aria-hidden="true" class="fa fa-heart-o fa-1x mr-2"></i>{{ photo.likes }}
+        <i aria-hidden="true" class="fa fa-comment-o fa-1x mx-2"></i>{{ photo.comments }}
+      </div>
+    </ap-card>
   </li>
 </ol>
 
 <ng-template #nophotos>
-  <p class="text-center text-muted" *ngIf="!photos.length; else list">
-    Sorry, no photos =/
+  <p class="text-muted text-center" *ngIf="!photos.length; else list">
+    Sorry, no photos <i class="fa fa-frown-o"></i>
   </p>
 </ng-template>

@@ -1,0 +1,17 @@
+<div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <i
+          aria-hidden="true"
+          class="fa fa-search"></i>
+      </span>
+    </div>
+    <input
+      class="form-control"
+      type="search"
+      placeholder="Search..."
+      autofocus
+      (keyup)="input($event.target.value)" />
+  </div>
+</div>

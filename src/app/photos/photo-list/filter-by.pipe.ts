@@ -6,14 +6,16 @@ import { Photo } from '../photo/photo';
 })
 export class FilterBy implements PipeTransform {
   transform(photos: Photo[], property: string, filter: string) {
-    return photos.filter(
-      photo => photo[property]
-        .toLowerCase()
-        .includes(
-          filter
-            .trim()
+    return !filter
+      ? photos
+      : photos.filter(
+          photo => photo[property]
             .toLowerCase()
-      )
+            .includes(
+              filter
+                .trim()
+                .toLowerCase()
+          )
     );
   }
 }
