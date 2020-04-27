@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { PhotoListModule } from './photos/photo-list/photo-list.module';
 import { PhotoFormModule } from './photos/photo-form/photo-form.module';
 import { ErrorsModule } from './errors/errors.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ErrorsModule } from './errors/errors.module';
     PhotoListModule,
     PhotoFormModule,
     ErrorsModule,
+    HomeModule,
     AppRoutingModule,
   ],
   providers: [],
