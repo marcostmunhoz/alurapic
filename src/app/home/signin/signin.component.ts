@@ -48,6 +48,6 @@ export class SigninComponent implements OnInit {
         if (this.detector.isPlatformBrowser()) {
           this.usernameInput.nativeElement.focus();
         }
-]      });
+      });
   }
 }
