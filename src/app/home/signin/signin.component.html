@@ -9,11 +9,9 @@
       class="form-control"
       placeholder="Username"
       autofocus>
-      <small
-        *ngIf="loginForm.get('username').errors?.required"
-        class="text-danger d-block mt-2">
+      <ap-vmessage *ngIf="loginForm.get('username').errors?.required">
         The username field is required!
-      </small>
+      </ap-vmessage>
   </div>
   <div class="form-group">
     <input
@@ -21,11 +19,9 @@
       type="password"
       class="form-control"
       placeholder="Password">
-      <small
-        *ngIf="loginForm.get('password').errors?.required"
-        class="text-danger d-block mt-2">
+      <ap-vmessage *ngIf="loginForm.get('password').errors?.required">
         The password field is required!
-      </small>
+      </ap-vmessage>
   </div>
   <button
     [disabled]="loginForm.invalid"
