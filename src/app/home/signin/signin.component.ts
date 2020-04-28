@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from 'src/app/core/auth/auth.service';
+import { PlatformDetectorService } from 'src/app/core/platform-detector.service';
 
 @Component({
   templateUrl: './signin.component.html',
@@ -15,7 +16,8 @@ export class SigninComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private service: AuthService,
-    private router: Router
+    private router: Router,
+    private detector: PlatformDetectorService
   ) { }
 
   ngOnInit() {
@@ -26,7 +28,9 @@ export class SigninComponent implements OnInit {
         password: ['', Validators.required]
       });
 
-    this.usernameInput.nativeElement.focus();
+    if (this.detector.isPlatformBrowser()) {
+      this.usernameInput.nativeElement.focus();
+    }
   }
 
   login() {
@@ -41,7 +45,9 @@ export class SigninComponent implements OnInit {
       }, err => {
         console.error('Erro na autenticação', err);
         this.loginForm.reset();
-        this.usernameInput.nativeElement.focus();
-      });
+        if (this.detector.isPlatformBrowser()) {
+          this.usernameInput.nativeElement.focus();
+        }
+]      });
   }
 }
